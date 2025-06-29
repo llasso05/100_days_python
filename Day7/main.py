@@ -1,65 +1,14 @@
 import random
+from Day7.ascii import hangman_art
+from Day7.guess_words import word_list
 
-hangman_art = ['''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========''']
-
-
-word_list = ["aardvark", "baboon", "camel"]
 word_iterator = 0
 
 # Lives
 lives = 7
 
 # Randomly choose a word from the word_list and assign it to a variable called chosen_word. then print it
-random_number = random.randint(0, 2)
+random_number = random.randint(0, 17)
 chosen_word = word_list[random_number]
 # print(chosen_word)
 
@@ -108,6 +57,7 @@ while placeholder != chosen_word:
 ⠀⠀⠀⣿⣿⡇⠀⠀⢀⣴⣿⣿⡟⠀⣿⣿⣿⣿⠃⠀⠀⣾⣿⣿⡿⠿⠛⢛⣿⡟⠀⠀⠀⠀⠀⠻⠿⠀⠀
 ⠀⠀⠀⠹⣿⣿⣶⣾⣿⣿⣿⠟⠁⠀⠸⢿⣿⠇⠀⠀⠀⠛⠛⠁⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
 """)
+        print()
         break
 
     print(placeholder + "\n")
