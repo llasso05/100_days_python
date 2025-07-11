@@ -29,5 +29,5 @@ while participants == "yes":
     elif participants == "no":
         winner = max(bids, key=bids.get)
         winner_bid = max(bids.values())
-        print(f"Winner: {winner}, bid {winner_bid}")
+        print(f"Winner:  {winner}, bid {winner_bid}")
 
