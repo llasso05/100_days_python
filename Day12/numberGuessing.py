@@ -1,7 +1,27 @@
 from Day12.art import win, lose, intro
+from Day12.src import select_difficulty, number_guess
 
 print(intro)
 
-# TODO-1 create a variable for number attempted and for number to be compared.
-# TODO-2 create a function that compares the number of attemps
-# TODO-3 create a conditional based on difficulty input that determines the ammount of attemps
+attempts = select_difficulty()
+secret_number = number_guess()
+
+while attempts > 0:
+    # print(secret_number)
+    user_guess = int(input("Select a number from 1 to 100: "))
+    if user_guess == secret_number:
+        print(win)
+        break
+    elif user_guess > secret_number:
+        print("To High")
+        attempts -= 1
+    elif user_guess < secret_number:
+        print("To Low")
+        attempts -= 1
+
+    if attempts > 0:
+        print(f"You have {attempts} attempts left")
+    elif attempts == 0:
+        print(lose)
+
+
